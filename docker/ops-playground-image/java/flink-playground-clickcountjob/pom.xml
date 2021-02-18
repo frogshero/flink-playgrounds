@@ -51,6 +51,13 @@ under the License.
 		<maven.compiler.target>${java.version}</maven.compiler.target>
 	</properties>
 
+	<repositories>
+		<repository>
+			<id>ali</id>
+			<url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+		</repository>
+	</repositories>
+
 	<dependencies>
 		<!-- Apache Flink dependencies -->
 		<!-- These dependencies are provided, because they should not be packaged into the JAR file. -->
