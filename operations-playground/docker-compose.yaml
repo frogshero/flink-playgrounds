@@ -16,7 +16,13 @@
 # limitations under the License.
 ################################################################################
 # docker-compose build 只执行下面的build命令
-#
+# flink-conf.yaml里指定state.checkpoints.dir，state.savepoints.dir目录，启动前需要先创建，不然会随机创建目录
+# docker-compose up -d 才会pull其他image
+#   先pull没有依赖的zookeeper，kafka
+# WORKDIR在DockerFile里定义,如apache/flink-ops-playground:1-FLINK-1.12-scala_2.11定义在 https://github.com/apache/flink-docker/blob/adc8432ea3ae7fa111172c2b3d3e6a923b9af4dd/1.12/scala_2.11-java8-debian/Dockerfile
+#   DockerFile里的CMD是默认的执行命令，command会覆盖CMD设置，在WORKDIR执行
+#   环境变量JOB_MANAGER_RPC_ADDRESS定义在docker-entrypoint.sh里，DockerFile会把它copy到image，docker run的时候会执行ENTRYPOINT
+# volumes ./表示相对路径
 ###########
 version: "2.1"
 services:
