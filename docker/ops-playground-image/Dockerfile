@@ -27,7 +27,7 @@ COPY ./java/flink-playground-clickcountjob /opt/flink-playground-clickcountjob
 WORKDIR /opt/flink-playground-clickcountjob
 RUN mvn clean install
 
-
+###2个image？第一个只用来编译
 ###############################################################################
 # Build Operations Playground Image
 ###############################################################################
