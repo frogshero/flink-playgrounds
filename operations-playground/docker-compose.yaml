@@ -23,6 +23,7 @@
 #   DockerFile里的CMD是默认的执行命令，command会覆盖CMD设置，在WORKDIR执行
 #   环境变量JOB_MANAGER_RPC_ADDRESS定义在docker-entrypoint.sh里，DockerFile会把它copy到image，docker run的时候会执行ENTRYPOINT
 # volumes ./表示相对路径
+# 在kafka，zookeeper内部可以使用服务名互相访问访问。etc/resolv.conf中的nameserver定义DNS服务器的IP地址，Docker提供了容器之间的自动DNS解析
 ###########
 version: "2.1"
 services:

@@ -15,7 +15,10 @@
 #  See the License for the specific language governing permissions and
 # limitations under the License.
 ################################################################################
-
+# route -n 查看路由表 route -n | awk '/UG[ \t]/{print $2}' 正则匹配行 打印第二列。查找通过网关连接的IP
+# volumes: - /var/run/docker.sock:/var/run/docker.sock docker客户端只要把请求发往这里，daemon就能收到并且做出响应。在同一台服务器上有很多个进程之间的通信使用一个.sock为后缀的文件来通信
+#
+###########
 version: '2.1'
 services:
   jobmanager:

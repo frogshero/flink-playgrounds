@@ -29,7 +29,7 @@ docker-compose build
 ### Preparing the Checkpoint and Savepoint Directories
 
 Create the checkpoint and savepoint directories on the Docker host machine (these volumes are mounted by the jobmanager and taskmanager, as specified in docker-compose.yaml):
-
+注意：要用chmod设置权限
 ```bash
 mkdir -p /tmp/flink-checkpoints-directory
 mkdir -p /tmp/flink-savepoints-directory
